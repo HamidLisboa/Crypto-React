@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  min-height: calc(100vh - 56px - 40px);
+}
+.about-img {
+  width: 300px;
+  height: 300px;
+}
