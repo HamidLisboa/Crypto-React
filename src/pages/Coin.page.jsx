@@ -17,15 +17,16 @@ const CoinPage = () => {
     axios
       .get(url)
       .then((response) => {
-        console.log(response.data);
+        console.log("API Response:", response.data);
         setCoin(response.data.data);
         setLoading(false);
       })
       .catch((error) => {
+        console.error("API Error:", error);
         setError("an error occurred while fetching data");
         setLoading(false);
       });
-  }, []);
+  }, [url, id]);
   return (
     <div className="container">
       {loading ? (

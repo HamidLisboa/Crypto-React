@@ -24,11 +24,19 @@ const CoinsComponent = ({ data }) => {
           <tr key={coin.rank}>
             <th scope="row">{coin.rank}</th>
             <td>
-              <Link to={`/coin/${coin.symbol}`}>{coin.name}</Link>
+              <Link to={`/coin/${coin.id}`}>{coin.name}</Link>
             </td>
             <td>{coin.symbol}</td>
             <td>${parseFloat(coin.priceUsd).toFixed(2)}</td>
-            <td>{parseFloat(coin.changePercent24Hr).toFixed(2)}%</td>
+            <td>
+              {
+                <span
+                  className={`badge ${coin.changePercent24Hr > 0 ? "bg-success" : "bg-danger"}`}
+                >
+                  {parseFloat(coin.changePercent24Hr).toFixed(2)}%
+                </span>
+              }
+            </td>
             <td>${parseFloat(coin.volumeUsd24Hr).toFixed(2)}</td>
             <td>${parseFloat(coin.marketCapUsd).toFixed(2)}</td>
           </tr>
