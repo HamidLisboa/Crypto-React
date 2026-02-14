@@ -12,14 +12,20 @@ const HomePage = () => {
 
   React.useEffect(() => {
     setLoading(true);
+
     axios
-      .get(baseUrl)
+      .get(baseUrl, {
+        headers: {
+          Authorization: `Bearer 8828627ae5d0d74fda33dfcaf636d750e69ae5c6928cfd41526979dc46563f31`,
+        },
+      })
       .then((response) => {
         console.log(response.data);
         setData(response.data.data);
         setLoading(false);
       })
       .catch((error) => {
+        console.error(error);
         setError("an error occurred while fetching data");
         setLoading(false);
       });
