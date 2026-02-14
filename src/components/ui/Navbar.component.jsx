@@ -16,8 +16,10 @@ const NavbarComponent = () => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <div>
-          <FaCoins className="navbar-logo-icon" />
-          <span className="navbar-logo-text">Crypto Trading</span>
+          <Link className="nav-link" to="/">
+            <FaCoins className="navbar-logo-icon" />
+            <span className="navbar-logo-text">Crypto Trading</span>
+          </Link>
         </div>
         <button
           className="navbar-toggler"
